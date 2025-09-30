@@ -1,0 +1,14 @@
+{
+    "users": [
+        { "username": "juan", "email": "juan@gmail.com", "password": "juan123" },
+        { "username": "pedro", "email": "pedro@gmail.com", "password": "pedro123" },
+        { "username": "ramiro", "email": "ramiro@gmail.com", "password": "ramiro123" },
+        { "username": "mateo", "email": "mateo@gmail.com", "password": "mateo123" },
+        { "username": "fran", "email": "fran@gmail.com", "password": "fran123" },
+        { "username": "john", "email": "john@gmail.com", "password": "john123" },
+        { "username": "facu", "email": "facu@gmail.com", "password": "facu123" },
+        { "username": "kiara", "email": "kiara@gmail.com", "password": "kiara123" },
+        { "username": "romina", "email": "romina@gmail.com", "password": "romina123" },
+        { "username": "sofia", "email": "sofia@gmail.com", "password": "sofia123" }
+    ]
+}

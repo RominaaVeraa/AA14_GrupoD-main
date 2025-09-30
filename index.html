@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sistema de Registro/Login</title>
+  <link rel="stylesheet" href="/css/style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <main class="contenedor-auth">
+    <div class="conmutador-formulario" role="tablist" aria-label="Cambiar formulario">
+      <button class="boton-conmutar active" data-form="login" type="button"
+              role="tab" aria-selected="true" aria-controls="login-section" id="login-tab">
+        Iniciar Sesión
+      </button>
+      <button class="boton-conmutar" data-form="register" type="button"
+              role="tab" aria-selected="false" aria-controls="register-section" id="register-tab">
+        Registrarse
+      </button>
+    </div>
+
+    <section class="seccion-formulario active" id="login-section" role="tabpanel"
+             aria-labelledby="login-tab">
+      <h2>Bienvenido de nuevo</h2>
+      <form id="login-form" class="formulario-auth" novalidate>
+        <div class="grupo-formulario">
+          <label for="login-email" class="solo-lectura">Correo electrónico</label>
+          <div class="campo-formulario">
+            <input type="email" id="login-email" name="email"
+                   placeholder="Correo electrónico" required
+                   autocomplete="email" spellcheck="false" inputmode="email"/>
+            <span class="estado-campo" aria-hidden="true"></span>
+          </div>
+          <div class="mensaje-error" id="login-email-error" aria-live="polite"></div>
+          <div class="mensaje-exito" id="login-email-success" aria-live="polite"></div>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="login-password" class="solo-lectura">Contraseña</label>
+          <div class="campo-formulario">
+            <input type="password" id="login-password" name="password"
+                   placeholder="Contraseña" required
+                   autocomplete="current-password" minlength="8"/>
+            <span class="estado-campo" aria-hidden="true"></span>
+          </div>
+          <div class="mensaje-error" id="login-password-error" aria-live="polite"></div>
+          <div class="mensaje-exito" id="login-password-success" aria-live="polite"></div>
+        </div>
+
+        <button type="submit" class="boton-enviar" id="login-btn">
+          <span class="texto-boton">Iniciar Sesión</span>
+          <span class="cargando" style="display:none;" aria-hidden="true"></span>
+        </button>
+      </form>
+    </section>
+
+    <section class="seccion-formulario" id="register-section" role="tabpanel"
+             aria-labelledby="register-tab" hidden>
+      <h2>Crear una cuenta</h2>
+      <form id="register-form" class="formulario-auth" novalidate>
+        <div class="grupo-formulario">
+          <label for="register-name" class="solo-lectura">Nombre completo</label>
+          <div class="campo-formulario">
+            <input type="text" id="register-name" name="name"
+                   placeholder="Nombre completo" required
+                   autocomplete="name"/>
+            <span class="estado-campo" aria-hidden="true"></span>
+          </div>
+          <div class="mensaje-error" id="register-name-error" aria-live="polite"></div>
+          <div class="mensaje-exito" id="register-name-success" aria-live="polite"></div>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="register-email" class="solo-lectura">Correo electrónico</label>
+          <div class="campo-formulario">
+            <input type="email" id="register-email" name="email"
+                   placeholder="Correo electrónico" required
+                   autocomplete="email" spellcheck="false" inputmode="email"/>
+            <span class="estado-campo" aria-hidden="true"></span>
+          </div>
+          <div class="mensaje-error" id="register-email-error" aria-live="polite"></div>
+          <div class="mensaje-exito" id="register-email-success" aria-live="polite"></div>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="register-username" class="solo-lectura">Nombre de usuario</label>
+          <div class="campo-formulario">
+            <input type="text" id="register-username" name="username"
+                   placeholder="Nombre de usuario" required
+                   autocomplete="username" spellcheck="false"/>
+            <span class="estado-campo" aria-hidden="true"></span>
+          </div>
+          <div class="mensaje-error" id="register-username-error" aria-live="polite"></div>
+          <div class="mensaje-exito" id="register-username-success" aria-live="polite"></div>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="register-password" class="solo-lectura">Contraseña</label>
+          <div class="campo-formulario">
+            <input type="password" id="register-password" name="password"
+                   placeholder="Contraseña" required
+                   autocomplete="new-password" minlength="8"/>
+            <span class="estado-campo" aria-hidden="true"></span>
+          </div>
+          <div class="mensaje-error" id="register-password-error" aria-live="polite"></div>
+          <div class="mensaje-exito" id="register-password-success" aria-live="polite"></div>
+        </div>
+
+        <div class="grupo-formulario">
+          <label for="register-confirm-password" class="solo-lectura">Confirmar contraseña</label>
+          <div class="campo-formulario">
+            <input type="password" id="register-confirm-password" name="confirmPassword"
+                   placeholder="Confirmar contraseña" required
+                   autocomplete="new-password" minlength="8"/>
+            <span class="estado-campo" aria-hidden="true"></span>
+          </div>
+          <div class="mensaje-error" id="register-confirm-password-error" aria-live="polite"></div>
+          <div class="mensaje-exito" id="register-confirm-password-success" aria-live="polite"></div>
+        </div>
+
+        <button type="submit" class="boton-enviar" id="register-btn">
+          <span class="texto-boton">Registrarse</span>
+          <span class="cargando" style="display:none;" aria-hidden="true"></span>
+        </button>
+      </form>
+    </section>
+
+    <div class="estado-app" id="app-status" role="status" aria-live="polite">
+      <div class="mensaje-estado" id="status-message"></div>
+    </div>
+  </main>
+
+  <script src="/js/auth.js"></script>
+  <script type="module" src="/js/async_validations.js"></script>
+</body>
+</html>
